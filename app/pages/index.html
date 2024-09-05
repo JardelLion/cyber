@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="cyber" content="cyber website" />
+    <meta name="jardellion" content="jardellion" />
+
+    <link rel="icon" href="../img/Logo.svg" type="image/x-icon" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"
+      defer
+    ></script>
+    <link href="../src/output.css" rel="stylesheet" />
+    <title>Cyber | Home</title>
+    <style>
+      textarea:focus,
+      input:focus,
+      select:focus {
+        box-shadow: 0 0 0 0 !important;
+        border: 0 none !important;
+        outline: 0 !important;
+      }
+
+
+      .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Duas colunas */
+            grid-template-rows: auto auto;  /* Duas linhas */
+      
+            height: 100vh; /* Altura da tela completa */
+        }
+
+        .box1 {
+            grid-column: 1 / 2; /* Primeira coluna (esquerda) */
+            grid-row: 1 / 2;    /* Primeira linha */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box3 {
+            grid-column: 1 / 2; /* Primeira coluna (esquerda) */
+            grid-row: 2 / 3;    /* Segunda linha, segunda parte */
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dividido em 2 colunas */
+            
+        }
+
+        .box4 {
+            grid-column: 2 / 3; /* Segunda coluna (direita) */
+            grid-row: 1 / 3;    /* Ocupa as duas linhas (completa) */
+          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Estilos para o conteúdo dentro da box3 */
+        .box3 div {
+           
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Media query para telas de tablet (768px) */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Coloca tudo em uma coluna */
+                grid-template-rows: auto;   /* Linhas automáticas */
+                height: auto; /* Deixa a altura flexível */
+            }
+
+            .box1, .box3, .box4 {
+                grid-column: 1 / 2; /* Ocupam toda a largura */
+                grid-row: auto;      /* Posição normal */
+            }
+
+            .box2 {
+                grid-column: 1 / 2; /* Vai para a segunda linha */
+                grid-row: 3;        /* Posição abaixo das outras caixas */
+            }
+        }
+
+        /* Media query para telas de mobile (480px) */
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Coloca todas as caixas em uma coluna */
+                grid-template-rows: auto;   /* Linhas automáticas */
+               
+            }
+
+            .box1, .box2, .box3, .box4 {
+                grid-column: 1 / 2; /* Todas as caixas ocupam a mesma coluna */
+                grid-row: auto;      /* Ficam uma abaixo da outra */
+            }
+
+            .box3 {
+                grid-template-columns: 1fr; /* Cada item dentro da box3 também fica um abaixo do outro */
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <header
+      class="flex justify-between items-center relative desktop:w-[80%] desktop:mx-[auto]"
+    >
+      <nav class="bg-white border-gray-200 w-[100%] my-4 mx-4">
+        <div
+          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+        >
+          <a
+            href="./"
+            class="flex items-center space-x-3 rtl:space-x-reverse mr-4"
+          >
+            <img src="../img/Logo.png" alt="cyber Logo" />
+          </a>
+
+          <button
+            type="button"
+            data-collapse-toggle="navbar-search"
+            aria-controls="navbar-search"
+            aria-expanded="false"
+            class="xl:hidden maxMobile:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1"
+          >
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              />
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
+
+          <div class="relative hidden xl:block">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+              <span class="sr-only">Search icon</span>
+            </div>
+            <input
+              type="text"
+              id="search-navbar"
+              class="block w-[372px] h-[56px] bg-[#f5f5f5] p-2 ps-10 text-sm text-gray-900 border-none rounded-[8px] focus:outline-transparent focus:border-transparent"
+              placeholder="Search..."
+            />
+          </div>
+
+          <div class="flex md:order-2">
+            <button
+              type="button"
+              data-collapse-toggle="navbar-search"
+              aria-controls="navbar-search"
+              aria-expanded="false"
+              class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1"
+            >
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+              <span class="sr-only">Search</span>
+            </button>
+
+            <button
+              data-collapse-toggle="navbar-search"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-search"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            id="navbar-search"
+          >
+            <div class="relative mt-3 md:hidden">
+              <div
+                class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="search-navbar"
+                class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-500 focus:border-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                placeholder="Search..."
+              />
+            </div>
+            <ul
+              class="flex flex-col md:w-[520px] p-4 md:p-0 mt-4 items-center font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+            >
+              <li class="w-[100%] block">
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li class="w-[100%] block">
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >About</a
+                >
+              </li>
+              <li class="w-[100%] block">
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Contact Us</a
+                >
+              </li>
+
+              <li class="w-[100%] block">
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Blog</a
+                >
+              </li>
+
+              <div class="flex">
+                <li class="mx-[10px]">
+                  <button aria-label="btn icon favorites">
+                    <img
+                      src="../img/icon/Favorites.png"
+                      alt=" favorites icon"
+                    />
+                  </button>
+                </li>
+                <li class="mx-[10px]">
+                  <button aria-label="btn icon cart">
+                    <img src="../img/icon/Cart.png" alt=" cart icon" />
+                  </button>
+                </li>
+                <li class="mx-[10px]">
+                  <button aria-label="btn icon user">
+                    <img src="../img/icon/User.png" alt=" user icon" />
+                  </button>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="bg-brown-shop text-white text-center md:flex md:justify-around">
+          <div>
+            <span class="text-2xl text-[#7a777c] font-bold mt-[88px] inline-block"
+              >PRO.BEYOND.</span
+            >
+            <h1 class="text-[72px]">
+              IPHONE 14 <br />
+              <span class="font-bold">PRO</span>
+            </h1>
+            <p class="text-[19px] text-[#7a777c]">
+              Created to change everything for the <br />
+              better. For everyone
+            </p>
+            <a
+              href="#"
+              class="w-[184px] h-[56px] inline-block leading-[56px] rounded-[6px] border-[1px] border-white text-[1em] font-semibold mt-[32px] mb-[48px]"
+            >
+              Shop Now
+            </a>
+          </div>
+
+          <figure class="bg-brown-shop">
+           <img
+              class="mx-auto"
+              srcset="../img/mobile/iphone.png 480w, ../img/iphone.png 800w"
+              sizes="(max-width: 640px) 480px,
+                    800px"
+              src="../img/mobile/iphone.png"
+              alt="iphone photo" 
+              >
+          </figure>
+        </div>
+      </section>
+
+      <section class="grid-container">
+            <div class="box1 bg-[#FFFFFF] flex-col pt-10 md:p-0 sm:flex-row">
+             <img
+              class="md:-ml-[55px]"
+              srcset="../img/mobile/PlayStation.png 480w, ../img/PlayStation.png 800w"
+              sizes="(max-width: 640px) 480px,
+                    800px"
+              src="../img/mobile/PlayStation.png"
+              alt="PlayStation photo" 
+              >
+
+              <div class="py-6 text-center md:-ml-[84px]">
+                <h2 class="text-[34px]">Playstation <strong>5</strong></h2>
+                <p class="text-[#909090] font-medium text-[1rem]">Incredibly powerful CPUs,GPUs, and an SSD with <br>
+                integrated I/O will redefine your PlayStation</p>
+              </div>
+
+
+
+            </div>
+
+
+
+            <div class="box3  md:flex">
+              <div class=" bg-[#EDEDED] md:relative flex-col pt-10 md:p-0 sm:flex-row">
+             <img
+              class="mx-auto md:absolute left-0 top-0"
+              srcset="../img/mobile/headphone.png 480w, ../img/headphone.png 800w"
+              sizes="(max-width: 640px) 480px,
+                    800px"
+              src="../img/headphone.png"
+              alt="headpone photo" 
+              >
+
+              <div class="py-6 text-center md:absolute md:top-[25%] md:left-[50px] md:right-0">
+                <h2 class="text-[34px] md:text-[29px]"><span class="md:block  md:-ml-[79px]">Apple </span>AirPods <strong>Max</strong></h2>
+                <p class="text-[#909090] font-medium text-[1rem]">Computational audi.<span class="md:block">Listen,it's powerful</span>
+                </p>
+              </div>
+
+
+
+              </div>
+              <div class="bg-[#353535] md:relative flex-col pt-10 sm:flex-row md:h-[300px]">
+             <img
+              class="mx-auto md:absolute md:top-0 md:left-0"
+              srcset="../img/mobile/vision.png 480w, ../img/vision.png 800w"
+              sizes="(max-width: 640px) 480px,
+                    800px"
+              src="../img/mobile/vision.png"
+              alt="PlayStation photo" 
+              >
+
+              <div class="py-6 text-center md:absolute md:left-[95px] md:right-0">
+                <h2 class="text-[34px] text-white md:text-[29px]"><span class="md:block">Apple</span> Vision <strong>Pro</strong></h2>
+                <p class="text-[#909090] font-medium text-[1rem]">An immersive way to experience entertainment</p>
+              </div>
+
+
+
+              </div>
+            </div>
+
+             <div class="box4 bg-[#EDEDED] flex-col pt-10 sm:flex-row md:relative" >
+             <img
+              class="md:absolute md:right-0 md:top-0 md:pt-[49px]"
+              srcset="../img/mobile/macbook14.png 480w, ../img/macbook14.png 800w"
+              sizes="(max-width: 640px) 480px,
+                    800px"
+              src="../img/mobile/macbook14.png"
+              alt="MacBook Pro 14 photo" 
+              >
+
+              <div class="py-6 text-center md:absolute md:top-[25%] md:left-[50px]">
+                <h2 class="text-[34px]"> <strong>Mackbook</strong>Air</h2>
+                <p class="text-[#909090] font-medium text-[1rem]">Incredibly powerful CPUs,GPUs, and an SSD with <br>
+                integrated I/O will redefine your PlayStation</p>
+                <a href="#" class=" md:w-[184px] md:h-[56px] inline-block w-[100%] leading-[56px] rounded-[6px] border-[2px] border-black text-[1em] font-semibold mt-[32px] mb-[48px]">Shop Now</a>
+              </div>
+
+
+
+            </div>
+      </section>
+       
+    
+    </main>
+  </body>
+</html>

@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,css}", "./js/**/*.{js}", "./src/**/*.{css}"],
+  content: [
+    "./node_modules/flowbite/**/*.js",
+    "./src/**/*.{html,js,css}",
+    "./src/**/*.css",
+    "./pages/**/*.html",
+  ],
   theme: {
     extend: {
       colors: {
@@ -9,9 +14,15 @@ module.exports = {
       screens: {
         desktop: "900px",
         // => @media (min-width: 900px) { ... }
-        
+
+        maxMobile: {'max': "768px" },
+        // => @media (max-width: 768px) {...}
       },
     },
   },
-  plugins: [],
+
+  plugins: [require("flowbite/plugin")],
 };
+
+
+ 
