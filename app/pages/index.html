@@ -69,7 +69,7 @@
         }
 
         /* Media query para telas de tablet (768px) */
-        @media (max-width: 768px) {
+        @media (max-width: 1279px) {
             .grid-container {
                 grid-template-columns: 1fr; /* Coloca tudo em uma coluna */
                 grid-template-rows: auto;   /* Linhas automáticas */
@@ -319,7 +319,7 @@
 
     <main>
       <section>
-        <div class="bg-brown-shop text-white text-center md:flex md:justify-around">
+        <div class="bg-brown-shop text-white text-center xl:flex xl:justify-around">
           <div>
             <span class="text-2xl text-[#7a777c] font-bold mt-[88px] inline-block"
               >PRO.BEYOND.</span
@@ -354,17 +354,17 @@
       </section>
 
       <section class="grid-container">
-            <div class="box1 bg-[#FFFFFF] flex-col pt-10 md:p-0 sm:flex-row">
+            <div class="box1 bg-[#FFFFFF] flex-col pt-10 xl:p-0 sm:flex-row">
              <img
-              class="md:-ml-[55px]"
+              class="xl:-ml-[55px]"
               srcset="../img/mobile/PlayStation.png 480w, ../img/PlayStation.png 800w"
-              sizes="(max-width: 640px) 480px,
+              sizes="(max-width: 600px) 480px,
                     800px"
               src="../img/mobile/PlayStation.png"
               alt="PlayStation photo" 
               >
 
-              <div class="py-6 text-center md:-ml-[84px]">
+              <div class="py-6 text-center xl:-ml-[84px]">
                 <h2 class="text-[34px]">Playstation <strong>5</strong></h2>
                 <p class="text-[#909090] font-medium text-[1rem]">Incredibly powerful CPUs,GPUs, and an SSD with <br>
                 integrated I/O will redefine your PlayStation</p>
@@ -376,19 +376,19 @@
 
 
 
-            <div class="box3  md:flex">
-              <div class=" bg-[#EDEDED] md:relative flex-col pt-10 md:p-0 sm:flex-row">
+            <div class="box3  xl:flex">
+              <div class=" bg-[#EDEDED] xl:relative flex-col pt-10 xl:p-0 sm:flex-row">
              <img
-              class="mx-auto md:absolute left-0 top-0"
+              class="mx-auto xl:absolute left-0 top-0"
               srcset="../img/mobile/headphone.png 480w, ../img/headphone.png 800w"
-              sizes="(max-width: 640px) 480px,
+              sizes="(max-width: 1279px) 480px,
                     800px"
               src="../img/headphone.png"
               alt="headpone photo" 
               >
 
-              <div class="py-6 text-center md:absolute md:top-[25%] md:left-[50px] md:right-0">
-                <h2 class="text-[34px] md:text-[29px]"><span class="md:block  md:-ml-[79px]">Apple </span>AirPods <strong>Max</strong></h2>
+              <div class="py-6 text-center xl:absolute xl:top-[25%] xl:left-[50px] xl:right-0">
+                <h2 class="text-[34px] xl:text-[29px]"><span class="xl:block  xl:-ml-[79px]">Apple </span>AirPods <strong>Max</strong></h2>
                 <p class="text-[#909090] font-medium text-[1rem]">Computational audi.<span class="md:block">Listen,it's powerful</span>
                 </p>
               </div>
@@ -396,18 +396,18 @@
 
 
               </div>
-              <div class="bg-[#353535] md:relative flex-col pt-10 sm:flex-row md:h-[300px]">
+              <div class="bg-[#353535] xl:relative flex-col pt-10 sm:flex-row xl:h-[300px]">
              <img
-              class="mx-auto md:absolute md:top-0 md:left-0"
+              class="mx-auto xl:absolute xl:top-0 xl:left-0"
               srcset="../img/mobile/vision.png 480w, ../img/vision.png 800w"
-              sizes="(max-width: 640px) 480px,
+              sizes="(max-width: 1279px) 480px,
                     800px"
               src="../img/mobile/vision.png"
               alt="PlayStation photo" 
               >
 
-              <div class="py-6 text-center md:absolute md:left-[95px] md:right-0">
-                <h2 class="text-[34px] text-white md:text-[29px]"><span class="md:block">Apple</span> Vision <strong>Pro</strong></h2>
+              <div class="py-6 text-center xl:absolute xl:left-[95px] xl:right-0">
+                <h2 class="text-[34px] text-white xl:text-[29px]"><span class="xl:block">Apple</span> Vision <strong>Pro</strong></h2>
                 <p class="text-[#909090] font-medium text-[1rem]">An immersive way to experience entertainment</p>
               </div>
 
@@ -416,27 +416,30 @@
               </div>
             </div>
 
-             <div class="box4 bg-[#EDEDED] flex-col pt-10 sm:flex-row md:relative" >
+             <div class="box4 bg-[#EDEDED] flex-col pt-10 sm:flex-row xl:relative" >
              <img
-              class="md:absolute md:right-0 md:top-0 md:pt-[49px]"
+              class="xl:absolute xl:right-0 xl:top-0 xl:pt-[49px]"
               srcset="../img/mobile/macbook14.png 480w, ../img/macbook14.png 800w"
-              sizes="(max-width: 640px) 480px,
+              sizes="(max-width: 1279px) 480px,
                     800px"
               src="../img/mobile/macbook14.png"
               alt="MacBook Pro 14 photo" 
               >
 
-              <div class="py-6 text-center md:absolute md:top-[25%] md:left-[50px]">
+              <div class="py-6 text-center xl:absolute xl:top-[25%] xl:left-[50px]">
                 <h2 class="text-[34px]"> <strong>Mackbook</strong>Air</h2>
                 <p class="text-[#909090] font-medium text-[1rem]">Incredibly powerful CPUs,GPUs, and an SSD with <br>
                 integrated I/O will redefine your PlayStation</p>
-                <a href="#" class=" md:w-[184px] md:h-[56px] inline-block w-[100%] leading-[56px] rounded-[6px] border-[2px] border-black text-[1em] font-semibold mt-[32px] mb-[48px]">Shop Now</a>
+                <a href="#" class=" xl:w-[184px] xl:h-[56px] inline-block w-[100%] leading-[56px] rounded-[6px] border-[2px] border-black text-[1em] font-semibold mt-[32px] mb-[48px]">Shop Now</a>
               </div>
 
 
 
             </div>
       </section>
+
+
+      <div><h1>hello world</h1></div>
        
     
     </main>
